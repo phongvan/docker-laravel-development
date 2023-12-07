@@ -132,8 +132,9 @@ Lab document
 Các lệnh với image
 - Tìm image để cài đặt :
 
-
-    docker search [centos]
+```
+docker search [centos]
+```
 
 - List các image đang có: 
 ```bash
@@ -152,31 +153,40 @@ docker pull centos:7
 Làm việc với container
 
 - Chạy 1 container từ image
+```
 	docker run --privileged -d -p 80:80 [Image Name] /sbin/init
 	docker run --privileged -d -p 80:80 centos:7 /sbin/init
-
-- Vào container để chạy lệnh:  docker exec -it [Container ID / Or name ] /bin/bash 
+```
+- Vào container để chạy lệnh:  
+```docker exec -it [Container ID / Or name ] /bin/bash 
+```
 
 - Cài đặt apache
+```
 	yum -y install httpd
 	systemctl start httpd
 	systemctl enable httpd
+```    
 
 echo "Hello Tin Hoc That La Don Gian" } /var/www/html/index.html
 
 - Thoát ra khỏi container: exit
 
 - Tạo image để triển khai cho máy khác
+```
 	docker commit -m "Comment" -a "Tác giả"  [Container ID] [Image Name]
 	docker commit -m "Centos Project01" -a "Nguyen Quoc Bao" d452f1a1b69d tinhocthatladongian/project01:v1
-
-- Đăng nhập vào docker/hub: docker login
-
+```
+- Đăng nhập vào docker/hub: 
+```docker login```
 - Đưa image lên docker hup để mọi người cùng sử dụng
+```
 	docker push [Tên image]
 	docker push tinhocthatladongian/project01:v1
- 
-- Check các container đang chạy: sudo docker ps -a
+ ```
+- Check các container đang chạy: 
+```sudo docker ps -a #Check các container đang chạy: 
+```
 
 - Xem trạng thái container: docker container ls -a
 
