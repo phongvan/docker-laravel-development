@@ -71,7 +71,7 @@ Các bạn muốn xóa project thì xóa cả thư mục source.
 
 Nếu đã có dữ án rồi thì copy code laravel vào thư mục này là được.
 
-#1  Bo Sung
+#  Bo Sung ..
 ##  Cài đặt Docker
 
 FROM DOC DOCKER :  https://docs.docker.com/engine/install/ubuntu/
