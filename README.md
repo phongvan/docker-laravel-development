@@ -180,22 +180,29 @@ echo "Hello Tin Hoc That La Don Gian" } /var/www/html/index.html
 
 - Xem trạng thái container: ```docker container ls -a```
 
-- Xóa containner: sudo docker rm [Container ID]
+- Xóa containner: 
+```sudo docker rm [Container ID]```
 
-- Stop container: docker container stop [Container ID]
+- Stop container: 
+```docker container stop [Container ID]```
 
-- Restart container: docker container restart [Container ID]
+- Restart container: ```docker container restart [Container ID]```
 
-- Pause container: docker container pause  [Container ID]
+- Pause container: ```docker container pause  [Container ID]```
 
-- Truy cập vào các container đang chạy: docker container attach [Container ID]
+- Truy cập vào các container đang chạy: ```d```ocker container attach [Container ID]```
 
 
-- Lệnh stop toàn bộ container: docker stop $(docker ps -a -q)
+*** Lệnh stop toàn bộ container: ***
+```docker stop $(docker ps -a -q)```
 
-***- Lệnh xóa toàn bộ container: docker rm $(docker ps -a -q)
+*** - Lệnh xóa toàn bộ container: ***
+```docker rm $(docker ps -a -q)```
 
-***- Lệnh xóa toàn bộ image: docker rmi -f $(docker images -a -q)
+***- Lệnh xóa toàn bộ image: ***
+```docker rmi -f $(docker images -a -q)```
+
+
 
 VD1: 
 	1. sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose  //cai dat docker-compose:  
@@ -211,8 +218,8 @@ VD1:
 	RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 	
-	file docker-compose.yml: Noi dung nhu sau...
-
+- file docker-compose.yml: Noi dung nhu sau...
+```dockerFile
 version: '3'
 
 services:
@@ -254,4 +261,4 @@ services:
 	  
 	  5. docker-compose build // Build container theo file docker-compose
 	  6. docker-compose up -d  // run container
-	  
+```
