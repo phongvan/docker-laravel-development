@@ -1,7 +1,7 @@
 
 ## Phần 1: Build và khơi chạy
 
-Mở một terminal từ thư mục này, tạm gọi đây là `Terminal 1`
+Mở một terminal từ thư mục này, tạm gọi đây là **Terminal 1**
 ```bash
 docker-compose build
 docker-compose up -d
@@ -193,13 +193,13 @@ echo "Hello Tin Hoc That La Don Gian" } /var/www/html/index.html
 - Truy cập vào các container đang chạy: ```d```ocker container attach [Container ID]```
 
 
-*** Lệnh stop toàn bộ container: ***
+**Lệnh stop toàn bộ container**
 ```docker stop $(docker ps -a -q)```
 
-*** - Lệnh xóa toàn bộ container: ***
+**Lệnh xóa toàn bộ container**
 ```docker rm $(docker ps -a -q)```
 
-***- Lệnh xóa toàn bộ image: ***
+**Lệnh xóa toàn bộ image**
 ```docker rmi -f $(docker images -a -q)```
 
 
