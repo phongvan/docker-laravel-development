@@ -203,64 +203,12 @@ docker push tinhocthatladongian/project01:v1
 
 - **Lệnh xóa toàn bộ image**
 ```docker rmi -f $(docker images -a -q)```
+```
+docker stop $(docker ps -a -q)
+docker rm $(docker ps -a -q)
+docker rmi -f $(docker images -a -q)
+```
 
 
 ## =================================
-VD1: 
-	1. sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose  //cai dat docker-compose:  
-	2. sudo chmod +x /usr/local/bin/docker-compose // Phan quyen
-	3. docker-compose --version  //Check version docker
-	4. Viết docker compose và dockerfile
-	
-	Viet rieng Dockerfile cho PHP vi can install cacs ext cua php.
-	Noi dung: Dockerfile
-	
-	FROM php:8.1-fpm-alpine
-	RUN docker-php-ext-install pdo pdo_mysql mbstring zip exif pcntl
-	RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-
-	
-- file docker-compose.yml: Noi dung nhu sau...
-```dockerFile
-version: '3'
-
-services:
-  nginx:
-    image: nginx:stable
-    ports:
-      - "8080:80"
-    volumes:
-      - ./laravel:/var/www/html
-      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
-  php:
-    build:
-      context: ./laravel
-      dockerfile: Dockerfile
-    volumes:
-      - ./laravel:/var/www/html
-    ports:
-      - "9000:9000"
-  mysql:
-    image: mysql:8.0.29-oracle
-    ports:
-      - "3307:3306"
-    volumes:
-      - ./mysql:/var/lib/mysql
-    environment: 
-      MYSQL_DATABASE: laravel
-      MYSQL_USER: pocadi
-      MYSQL_PASSWORD: pocadi123
-      MYSQL_ROOT_PASSWORD: pocadi123
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin:latest
-    ports:
-      - "8081:80"
-    environment:
-      - PMA_HOSTS=mysql
-      - PMA_PORT=3306
-      - PMA_USER=pocadi123
-      - PMA_PASSWORD=pocadi123
-	  
-	  5. docker-compose build // Build container theo file docker-compose
-	  6. docker-compose up -d  // run container
-```
+Xen theem : https://github.com/laradock/php-fpm
