@@ -1,5 +1,5 @@
 
-## Phần 1: Build và khơi chạy
+## Phần 1: Build và khởi chạy
 
 Mở một terminal từ thư mục này, tạm gọi đây là **Terminal 1**
 ```bash
@@ -134,7 +134,7 @@ docker image ls
 ```bash
 sudo docker rmi [Image ID]
 ```
-Chú ý: Các image mà có container đang chạy thì sẽ không xóa được mà phải xóa container liên quan tới nó trước
+*Chú ý: Các image mà có container đang chạy thì sẽ không xóa được mà phải xóa container liên quan tới nó trước*
 - Pull image về:  
 ```
 docker pull centos:7
@@ -176,7 +176,7 @@ docker push [Tên image]
 docker push tinhocthatladongian/project01:v1
  ```
 - Check các container đang chạy: 
-```sudo docker ps -a #Check các container đang chạy:```
+```sudo docker ps -a```
 
 
 - Xem trạng thái container: ```docker container ls -a```
