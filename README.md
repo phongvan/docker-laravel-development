@@ -185,10 +185,10 @@ echo "Hello Tin Hoc That La Don Gian" } /var/www/html/index.html
 	docker push tinhocthatladongian/project01:v1
  ```
 - Check các container đang chạy: 
-```sudo docker ps -a #Check các container đang chạy: 
+```sudo docker ps -a //Check các container đang chạy: 
 ```
 
-- Xem trạng thái container: docker container ls -a
+- Xem trạng thái container: ```docker container ls -a```
 
 - Xóa containner: sudo docker rm [Container ID]
 
