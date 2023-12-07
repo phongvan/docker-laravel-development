@@ -71,8 +71,8 @@ Các bạn muốn xóa project thì xóa cả thư mục source.
 
 Nếu đã có dữ án rồi thì copy code laravel vào thư mục này là được.
 
-#  Bo Sung ..
-##  Cài đặt Docker
+#  Bổ sung
+##  1 Cài đặt Docker
 
 FROM DOC DOCKER :  https://docs.docker.com/engine/install/ubuntu/
 // Add Docker's official GPG key:
@@ -95,7 +95,7 @@ FROM DOC DOCKER :  https://docs.docker.com/engine/install/ubuntu/
     sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 	
 	
-##  Cài đặt Docker Compose
+##  2 Cài đặt Docker Compose
 ```bash
     sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose  //cai dat docker-compose:  
 	sudo chmod +x /usr/local/bin/docker-compose
@@ -111,22 +111,12 @@ xem cac imae
 images => same file cai dat, kieu file - ghost
 container => cai dat len tu file images 
 
-
-Comand: 
-	docker-compose ps
-	docker-compose ps
+##  2 Các Comand thường dùng
+```
+	docker ps
 	docker images
-	docker-compose up -d // -d chay ngam,
-	
-	#1 CAI DAT
-	***Cai Dat Docker 
-	sudo atp-get update -y
-	sudo atp install -y docker  // cai dat docker 
-	sudo service docker start  // start no len 
-	sudo usermod -a -G docker ec2-user  // k ro
-	
-	
-
+	docker-compose up -d // -d chay ngam, foreround /backround
+```
 
 Lab document
 Các lệnh với image
