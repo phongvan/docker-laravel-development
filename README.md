@@ -96,10 +96,10 @@ FROM DOC DOCKER :  https://docs.docker.com/engine/install/ubuntu/
 	
 	
 ##  Cài đặt Docker Compose
-
+```bash
     sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose  //cai dat docker-compose:  
-
 	sudo chmod +x /usr/local/bin/docker-compose
+```
 
 Dockerfile
 Docker-compose
@@ -135,10 +135,19 @@ Các lệnh với image
 
     docker search [centos]
 
-- List các image đang có: docker image ls
-- Xóa image: sudo docker rmi [Image ID]
+- List các image đang có: 
+```bash
+docker image ls
+```
+- Xóa image 
+```bash
+sudo docker rmi [Image ID]
+```
 Chú ý: Các image mà có container đang chạy thì sẽ không xóa được mà phải xóa container liên quan tới nó trước
-- Pull image về:  docker pull centos:7
+- Pull image về:  
+```
+docker pull centos:7
+```
 
 Làm việc với container
 
