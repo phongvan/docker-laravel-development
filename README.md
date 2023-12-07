@@ -176,8 +176,8 @@ docker push [Tên image]
 docker push tinhocthatladongian/project01:v1
  ```
 - Check các container đang chạy: 
-```sudo docker ps -a //Check các container đang chạy: 
-```
+```sudo docker ps -a #Check các container đang chạy:```
+
 
 - Xem trạng thái container: ```docker container ls -a```
 
