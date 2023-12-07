@@ -193,17 +193,17 @@ echo "Hello Tin Hoc That La Don Gian" } /var/www/html/index.html
 - Truy cập vào các container đang chạy: ```d```ocker container attach [Container ID]```
 
 
-**Lệnh stop toàn bộ container**
+- **Lệnh stop toàn bộ container**
 ```docker stop $(docker ps -a -q)```
 
-**Lệnh xóa toàn bộ container**
+- **Lệnh xóa toàn bộ container**
 ```docker rm $(docker ps -a -q)```
 
-**Lệnh xóa toàn bộ image**
+- **Lệnh xóa toàn bộ image**
 ```docker rmi -f $(docker images -a -q)```
 
 
-
+## =================================
 VD1: 
 	1. sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose  //cai dat docker-compose:  
 	2. sudo chmod +x /usr/local/bin/docker-compose // Phan quyen
