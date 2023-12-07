@@ -193,6 +193,7 @@ docker push tinhocthatladongian/project01:v1
 
 - Truy cập vào các container đang chạy: ```d```ocker container attach [Container ID]```
 
+## =================================
 
 - **Lệnh stop toàn bộ container**
 ```docker stop $(docker ps -a -q)```
