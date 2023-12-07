@@ -11,7 +11,7 @@ services:
 
   db:
     container_name: mysql
-    image: mariadb:10.3
+    image: mariadb:latest
     restart: always
     ports:
       - 3306:3306
@@ -28,7 +28,7 @@ services:
     image: phpmyadmin
     restart: always
     ports:
-      - 8080:80
+      - 7070:80
     environment:
       - PMA_HOST=db
 
@@ -40,7 +40,7 @@ services:
     image: nginx:latest
     restart: unless-stopped
     ports:
-      - 7979:80
+      - 6969:80
     volumes:
       - ./nginx/conf.d/:/etc/nginx/conf.d/
       - ./laravel/source/:/var/www/laravel/
