@@ -1,4 +1,4 @@
-FROM php:latst
+FROM php
 
 # Arguments defined in docker-compose.yml
 ARG user
