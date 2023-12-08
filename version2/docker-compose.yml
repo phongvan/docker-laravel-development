@@ -14,7 +14,7 @@ services:
         context: ./laravel
         dockerfile: Dockerfile
       volumes:
-        - ./laravel:/var/www/html
+        - ./laravel:/var/www/laravel
       ports:
         - "9000:9000"
     mysql:
