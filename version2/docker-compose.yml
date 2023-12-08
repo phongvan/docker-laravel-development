@@ -27,11 +27,11 @@ services:
           MYSQL_PASSWORD: pocadi123
           MYSQL_ROOT_PASSWORD: pocadi123  
     phpmyadmin:
-      image: phpmyadmin/phpmyadmin:latest
-        ports:
-          - "8081:80"
-        environment:
-          - PMA_HOSTS=mysql
-          - PMA_PORT=3306
-          - PMA_USER=pocadi123
-          - PMA_PASSWORD=pocadi123
+      image: phpmyadmin
+      ports:
+        - "8081:80"
+      environment:
+        - PMA_HOSTS=mysql
+        - PMA_PORT=3306
+        - PMA_USER=pocadi123
+        - PMA_PASSWORD=pocadi123
