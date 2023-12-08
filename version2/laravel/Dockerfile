@@ -25,6 +25,7 @@ RUN set -eux; \
     apt-get install -y --no-install-recommends \
             curl \
             zip \
+            vim \
             libmemcached-dev \
             libz-dev \
             libpq-dev \
