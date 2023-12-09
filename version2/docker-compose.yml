@@ -6,7 +6,7 @@ services:
       ports:
         - "7070:80"
       volumes:
-        #- ./laravel:/var/www/html
+        - ./code:/var/www/
         - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
     php:
       container_name: php
