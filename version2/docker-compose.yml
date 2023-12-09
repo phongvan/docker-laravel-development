@@ -37,5 +37,5 @@ services:
       environment:
         - PMA_HOSTS=mysql
         - PMA_PORT=3307
-        - PMA_USER=pocadi
-        - PMA_PASSWORD=pocadi123
+        - PMA_USER=root
+        - PMA_PASSWORD=root123
