@@ -1,3 +1,23 @@
+
+server {
+    if ($host = www.weewiin.com) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    if ($host = weewiin.com) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    server_name weewiin.com www.weewiin.com;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+
+
+}
 server {
     listen 443 ssl http2;
     listen [::]:443 ssl http2;
@@ -20,9 +40,11 @@ server {
         include fastcgi_params;
     }
 
+    location ~ /.well-known/acme-challenge/ {
+            root /var/www/certbot;
+        }
+
     location ~ /\.(?!well-known).* {
         deny all;
     }
-
-
 }
