@@ -45,5 +45,5 @@ services:
       container_name: certbot
       volumes:
         - ./certbot/conf:/etc/letsencrypt
-        - ./certbot/www:/var/www/certbot
+        - ./code/test4/public:/var/www/certbot
       command: certonly --webroot -w /var/www/certbot --force-renewal --email tinh.icolor@gmail.com -d test4.weewiin.com --agree-tos
