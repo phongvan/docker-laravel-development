@@ -5,6 +5,7 @@ services:
       image: nginx:stable
       ports:
         - "80:80"
+        - "443:443"
       volumes:
         - ./code:/var/www/
         - ./nginx/:/etc/nginx/conf.d/
@@ -39,3 +40,10 @@ services:
         - PMA_PORT=3307
         - PMA_USER=root
         - PMA_PASSWORD=root123
+    certbot:
+      image: certbot/certbot
+      container_name: certbot
+      volumes:
+        - ./certbot/conf:/etc/letsencrypt
+        - ./certbot/www:/var/www/certbot
+      command: certonly --webroot -w /var/www/certbot --force-renewal --email {tinh.icolor@gmail.com} -d {test4.weewiin.com} --agree-tos
