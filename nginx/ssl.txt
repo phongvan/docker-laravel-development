@@ -9,6 +9,38 @@ server {
 
 }
 
+
+server {
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+
+    ssl_certificate /etc/letsencrypt/live/test4.weewiin.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/test4.weewiin.com/privkey.pem;
+    server_name test4.weewiin.com;
+    root /var/www/test4/public;
+    index index.php;
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    error_page 404 /index.php;
+
+    location ~ \.php$ {
+        fastcgi_pass php:9000;
+        fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+
+    location ~ /.well-known/acme-challenge/ {
+            root /var/www/certbot;
+        }
+
+    location ~ /\.(?!well-known).* {
+        deny all;
+    }
+}
+
+
 server {
     listen 443 ssl http2;
     listen [::]:443 ssl http2;
