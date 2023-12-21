@@ -1,107 +1,26 @@
 server {
-    if ($host = test4.weewiin.com) {
+    if ($host = www.DOMAIN) {
         return 301 https://$host$request_uri;
     } # managed by Certbot
 
-    server_name test4.weewiin.com www.test4.weewiin.com;
+    if ($host = DOMAIN) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+    server_name DOMAIN www.DOMAIN;
     listen 80;
     return 404; # managed by Certbot
 
 }
-
-
 server {
     listen 443 ssl http2;
     listen [::]:443 ssl http2;
 
-    ssl_certificate /etc/letsencrypt/live/test4.weewiin.com/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/test4.weewiin.com/privkey.pem;
-    server_name test4.weewiin.com;
-    root /var/www/test4/public;
-    index index.php;
-    location / {
-        try_files $uri $uri/ /index.php?$query_string;
-    }
+    #ssl_certificate /etc/letsencrypt/live/DOMAIN/fullchain.pem;
+    #ssl_certificate_key /etc/letsencrypt/live/DOMAIN/privkey.pem;
 
-    error_page 404 /index.php;
-
-    location ~ \.php$ {
-        fastcgi_pass php:9000;
-        fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
-        include fastcgi_params;
-    }
-
-    location ~ /.well-known/acme-challenge/ {
-            root /var/www/certbot;
-        }
-
-    location ~ /\.(?!well-known).* {
-        deny all;
-    }
-}
-
-
-server {
-    listen 443 ssl http2;
-    listen [::]:443 ssl http2;
-
-    ssl_certificate /etc/letsencrypt/live/test4.weewiin.com/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/test4.weewiin.com/privkey.pem;
-
-    server_name test4.weewiin.com;
-    root /var/www/test4/public;
-    index index.php;
-    location / {
-        try_files $uri $uri/ /index.php?$query_string;
-    }
-
-    error_page 404 /index.php;
-
-    location ~ \.php$ {
-        fastcgi_pass php:9000;
-        fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
-        include fastcgi_params;
-    }
-
-    location ~ /.well-known/acme-challenge/ {
-            root /var/www/certbot;
-        }
-
-    location ~ /\.(?!well-known).* {
-        deny all;
-    }
-}
-
-
-
-server {
-    if ($host = www.weewiin.com) {
-        return 301 https://$host$request_uri;
-    } # managed by Certbot
-
-
-    if ($host = weewiin.com) {
-        return 301 https://$host$request_uri;
-    } # managed by Certbot
-
-
-    server_name weewiin.com www.weewiin.com;
-    listen 80;
-    return 404; # managed by Certbot
-
-
-
-
-}
-server {
-    listen 443 ssl http2;
-    listen [::]:443 ssl http2;
-
-    #ssl_certificate /etc/letsencrypt/live/test4.weewiin.com/fullchain.pem;
-    #ssl_certificate_key /etc/letsencrypt/live/test4.weewiin.com/privkey.pem;
-
-    server_name test4.weewiin.com;
-    root /var/www/test4/public;
+    server_name DOMAIN www.DOMAIN;
+    root /var/www/DOMAIN/public;
     index index.php;
     location / {
         try_files $uri $uri/ /index.php?$query_string;
