@@ -65,16 +65,16 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 #     chown -R $user:$user /home/$user
 
 # Add docker custom crontab
-ADD my_laravel_docker_crontab /etc/cron.d/my_laravel_docker_crontab
+#ADD my_laravel_docker_crontab /etc/cron.d/my_laravel_docker_crontab
 
 # Update the crontab file permission
-RUN chmod 0644 /etc/cron.d/my_laravel_docker_crontab
+#RUN chmod 0644 /etc/cron.d/my_laravel_docker_crontab
 
 # Specify crontab file for running
-RUN crontab /etc/cron.d/my_laravel_docker_crontab
+#RUN crontab /etc/cron.d/my_laravel_docker_crontab
 
 # execute crontab
-CMD ["cron", "-f"]
+#CMD ["cron", "-f"]
 
 
 # Set working directory
