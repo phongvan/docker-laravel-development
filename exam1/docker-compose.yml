@@ -6,5 +6,5 @@ services:
     build: laravel.cron.Dockerfile
     image: laravel_cronjob:v1.0
     volumes:
-      - /home/KJ/laravel_app:/my/laravel/app/
+      - /root/tinh2:/my/laravel/app/
     restart: always
