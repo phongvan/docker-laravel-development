@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  cronjob:
+    container_name: laravel_cronjob
+    build: laravel.cron.Dockerfile
+    image: laravel_cronjob:v1.0
+    volumes:
+      - /home/KJ/laravel_app:/my/laravel/app/
+    restart: always
