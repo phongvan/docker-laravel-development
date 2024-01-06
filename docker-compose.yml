@@ -11,15 +11,15 @@ services:
         - ./nginx/:/etc/nginx/conf.d/
         - ./certbot/conf:/etc/letsencrypt
         - ./certbot/www:/var/www/certbot
-    php:
-      container_name: php
+    php82:
+      container_name: php82
       build:
         context: php
-        dockerfile: Dockerfile
+        dockerfile: Dockerfile-8.2
       volumes:
         - ./code:/var/www/
       ports:
-        - "9000:9000"
+        - "8200:9000"
     php56:
       container_name: php56
       build:
