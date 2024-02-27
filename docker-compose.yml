@@ -31,11 +31,11 @@ services:
         - "5600:9000"
     mysql:
       container_name: mysql
-      image: mysql:8.0.29-oracle
+      image: mysql:latest
       ports:
         - "3307:3306"
       volumes:
-        - ./mysql:/var/lib/mysql
+        - ./.mysql:/var/lib/mysql
       environment:
         MYSQL_DATABASE: laravel_test
         MYSQL_USER: tinh
