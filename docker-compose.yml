@@ -15,7 +15,7 @@ services:
       container_name: php82
       build:
         context: php
-        dockerfile: php/Dockerfile-82
+        dockerfile: Dockerfile-82
       volumes:
         - ./code:/var/www/
       ports:
@@ -24,7 +24,7 @@ services:
       container_name: php56
       build:
         context: php
-        dockerfile: php/Dockerfile-56
+        dockerfile: Dockerfile-56
       volumes:
         - ./code:/var/www/
       ports:
