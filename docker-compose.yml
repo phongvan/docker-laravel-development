@@ -29,6 +29,15 @@ services:
         - ./code:/var/www/
       ports:
         - "5600:9000"
+    php83:
+      container_name: php83
+      build:
+        context: php
+        dockerfile: Dockerfile-83
+      volumes:
+        - ./code:/var/www/
+      ports:
+        - "8300:9000"
     mysql:
       container_name: mysql
       image: mysql:latest
